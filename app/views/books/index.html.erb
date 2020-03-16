@@ -1,0 +1,40 @@
+
+
+<!-- pour recevoir l'entrer user-->
+<form action="/action_page.php">
+  <div class="form-group">
+    <label for="email">Book title:</label>
+    <input type="text" class="form-control" placeholder="Entrez le titre du livre" id="email">
+  </div>
+
+  <div class="form-group form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-outline-success">Submit</button>
+</form>
+
+<!-- pour afficher le book selon l'id-->
+<h1 class="text-warning">Liste des livres</h1>
+<% @books.each do |book| %>
+  <p><a href="/books/<%= book.id %>"><%= book.title %></a></p>
+<% end %>
+
+
+
+
+
+<%= form_tag '/books', method: 'post' do %>
+ <input type="text" name="content" />
+<input type="submit" value="Ajouter le gossip" />
+<% end %>
+
+
+<p><a href="/gossips/new/" class="btn btn-outline-success">New gossip</a></p>
+<h1>Listes des gossips</h1>
+<% @gossips.each do |gossip| %>
+<p><%= gossip.author%>: <%=gossip.content%></p>
+<% end %>
+
+

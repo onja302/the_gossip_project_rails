@@ -1,0 +1,14 @@
+<h1 class="text-info">Welcome to the gossip world</h1>
+<center>
+	<table style="width: 80%">
+		<% id = 2%>
+		<% @gossips.each do |gossip| %>
+			<tr>
+				<td style="width: 30%" class="text-white"><%= gossip.author%></td>
+				<td style="width: 60%" class="text-white"><%=gossip.content%></td>
+				<td style="width: 10%"><a href="/gossips/<%=id%>"  class="btn btn-dark">page</a></td>
+			</tr>
+			<% id += 1%>
+		<% end %>
+	</table>
+</center>
